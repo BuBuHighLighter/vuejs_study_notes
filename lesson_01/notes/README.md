@@ -13,3 +13,17 @@ Vue有很多特点和Web开发中常见的高级功能
 - 前端路由技术
 - 状态管理
 - 虚拟DOM
+
+安装Vue的方式
+- 方法一：直接CDN引入
+  ```html
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 生产环境，优化了尺寸和速度 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  ```
+- 方法二：下载和引入
+  开发环境: https://vuejs.org/js/vue.js
+  生产环境: https://vuejs.org/js/vue.min.js
+- 方法三：NPM安装
+  后续通过CLI和webpack的使用，使用该方法。

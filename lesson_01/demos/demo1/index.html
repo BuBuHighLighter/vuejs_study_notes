@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+</head>
+
+<body>
+<div id="app">{{message}}</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    /**
+    * Vue
+    * 编程范式：声明式
+    */
+    const app = new Vue({
+        el: '#app',                     // 用于挂载需要管理的元素
+        data: {                         // 定义数据
+            message: 'hello world'
+        }
+    });
+
+    /**
+    * 原生JS
+    * 编程范式：命令式编程
+    */ 
+    // 1.获取id=app的div
+    // 2.声明一个变量message
+    // 3.将message变量放在前面的div中显示
+</script>
+</html>
