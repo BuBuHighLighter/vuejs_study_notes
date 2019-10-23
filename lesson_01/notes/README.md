@@ -36,3 +36,7 @@ Vue有很多特点和Web开发中常见的高级功能
   后续通过CLI和webpack的使用，使用该方法。
 
 [一个计数器案例](../demos/demo3/index.html)
+
+Vue中的MVVM
+
+![MVVM](./imgs/MVVM.png)
