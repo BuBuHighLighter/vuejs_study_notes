@@ -10,19 +10,20 @@
 </head>
 
 <body>
-<div id="app">
-    <ul>
-        <li v-for="item in movies">{{item}}</li>
-    </ul>
-</div>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <h1 v-once>{{message}}</h1>
+    </div>
 </body>
 <script src="../../../lib/vue.js"></script>
 <script>
     const app = new Vue({
         el: '#app',
         data: {
-            movies: ['海王', '超人', '蜘蛛侠', '钢铁侠']
+            message: 'hello world'
         }
     })
+    app.message = '123';
 </script>
+
 </html>

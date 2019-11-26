@@ -40,3 +40,28 @@ Vue有很多特点和Web开发中常见的高级功能
 Vue中的MVVM
 
 ![MVVM](./imgs/MVVM.png)
+
+## v-once的使用
+
+该指令后面不需要跟任何表达式。
+
+该指令表示元素和组件只渲染一次，不会随着数据的改变而改变。
+
+[代码示例](../demos/demo4/index.html)
+```html
+<div id="app">
+<h1>{{message}}</h1>                <!-- 123 -->
+<h1 v-once>{{message}}</h1>         <!-- hello world -->
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello world'
+    }
+  })
+
+  app.message = '123';
+</script>
+```
