@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="imgUrl">
+        <a v-bind:href="aHref">123</a>
+
+        <img :src="imgUrl">
+        <a :href="aHref">123</a>
+    </div>
+</body>
+<script src="../../../../lib/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            imgUrl: 'https://i0.hdslb.com/bfs/archive/d8852d6a99de0e9a4c585c0c610fd4c80c957657.jpg@336w_190h.webp',
+            aHref: 'http://www.baidu.com'
+        }
+    })
+</script>
+</html>

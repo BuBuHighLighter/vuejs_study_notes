@@ -1,45 +1,4 @@
-# 邂逅Vuejs
-
-## 认识Vuejs
-
-Vue是一个渐进式框架，什么是渐进式？
-
-- 渐进式意味着你可以将Vue作为你应用的一部分嵌入其中，带来更丰富的交互体验。
-- 或者如果你希望将更多的业务逻辑使用Vue实现，那么Vue的核心库以及其生态系统。
-- 比如Core+Vue-router+Vuex，也可以满足你各种各样的需求。
-
-Vue有很多特点和Web开发中常见的高级功能
-
-- 解耦视图和数据
-- 可复用的组件
-- 前端路由技术
-- 状态管理
-- 虚拟DOM
-
-安装Vue的方式
-
-- 方法一：直接CDN引入
-- 
-  ```html
-    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- 生产环境，优化了尺寸和速度 -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-  ```
-- 方法二：下载和引入
-- 
-  开发环境: https://vuejs.org/js/vue.js
-
-  生产环境: https://vuejs.org/js/vue.min.js
-
-- 方法三：NPM安装
-  后续通过CLI和webpack的使用，使用该方法。
-
-[一个计数器案例](../demos/demo3/index.html)
-
-Vue中的MVVM
-
-![MVVM](./imgs/MVVM.png)
+# 其他指令的使用
 
 ## v-once
 
@@ -47,7 +6,7 @@ Vue中的MVVM
 
 该指令表示元素和组件只渲染一次，不会随着数据的改变而改变。
 
-[代码示例](../demos/demo4/index.html)
+[代码示例](../demos/demo1/index.html)
 ```html
 <div id="app">
   <h1>{{message}}</h1>                <!-- 123 -->
@@ -72,7 +31,7 @@ Vue中的MVVM
 
 会将string的html解析出来并且进行渲染。
 
-[代码示例](../demos/demo5/index.html)
+[代码示例](../demos/demo2/index.html)
 
 ```html
 <div id="app">
@@ -96,7 +55,7 @@ v-text作用和Mustache比较相似：都是用于将数据显示在界面中。
 
 v-text通常情况下，接受一个string类型。
 
-[代码示例](../demos/demo6/index.html)
+[代码示例](../demos/demo3/index.html)
 
 ```html
 <div id="app">
@@ -118,7 +77,7 @@ v-text通常情况下，接受一个string类型。
 
 v-pre用于跳过这个元素和它子元素的编译过程，用于显示原本的Mustache语法。
 
-[代码示例](../demos/demo7/index.html)
+[代码示例](../demos/demo4/index.html)
 
 ```html
 <div id="app">
@@ -153,4 +112,22 @@ cloak：斗篷
 [v-cloak] {
   display: none;
 }
+```
+
+[代码示例](../demos/demo5/index.html)
+
+```html
+<div id="app">
+    <h1>{{message}}</h1>
+    <h1 v-cloak>{{message}}</h1>
+</div>
+
+<script>
+    setTimeout(() => {const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world'
+        }
+    })}, 1000);
+</script>
 ```
