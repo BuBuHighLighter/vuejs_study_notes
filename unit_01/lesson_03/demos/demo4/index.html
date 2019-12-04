@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .active {
+            color: red;
+        }
+
+        .line {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <span class="title" :class="getClasses()">Hello world</span>
+        <span class="title" :class="computedClasses">Hello world1</span>
+    </div>
+</body>
+<script src="../../../../lib/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            isActive: true,
+            isLine: true,
+        },
+        methods: {
+            getClasses() {
+                return {line: this.isLine, active: this.isActive}
+            }
+        },
+        computed: {
+            computedClasses() {
+                return {line: this.isLine, active: this.isActive}
+            }
+        }
+    })
+</script>
+</html>
