@@ -180,3 +180,53 @@ v-bind用于绑定一个或多个属性值，或者向另一个组件传递props
 <h2 class="title" :class="classes">Hello world</h2>
 ```
 
+## v-bind绑定style(对象语法)
+
+在写CSS属性名的时候，比如font-size：
+
+- 我们可以使用驼峰式(camelCase):`fontSize`
+- 或短横线分割(kebab-case, 记得用单引号括起来):`'font-size'`
+
+绑定style有两种方式：
+
+- 对象语法
+- 数组语法
+
+对象语法绑定style
+
+```html
+<span :style="{key(CSS属性名): value(CSS属性值)}">Hello world</span>
+```
+
+例如:
+
+```html
+<span :style="{font-size: '50px'}">Hello world</span>
+```
+
+**注意**
+
+1. CSS属性名有两种写法：`font-size`/`fontSize`
+2. 这里如果直接使用属性值，则需要加单引号让它成为一个字符串，否则vue会把它当成一个变量进行解析。如：`'50px'`
+
+使用变量：
+
+```html
+<div id="app">
+    <span :style="{font-size: finalSize}">Hello world</span>
+    <!-- 也可以使用表达式 -->
+    <span :style="{fontSize: finalNum + 'px'}">Hello world</span>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            finalSize: '50px',
+            finalNum: 50,
+        }
+    })
+</script>
+```
+
+也可以把这个对象语法中的对象放到methods/computed/data中。
