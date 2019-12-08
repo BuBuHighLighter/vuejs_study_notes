@@ -230,3 +230,22 @@ v-bind用于绑定一个或多个属性值，或者向另一个组件传递props
 ```
 
 也可以把这个对象语法中的对象放到methods/computed/data中。
+
+## v-bind绑定style[数组语法]
+
+一般用的很少
+
+```html
+<div id="app">
+    <span :style="[baseStyle]">Hello world</span>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            baseStyle: {backgrounColor: 'red'}
+        }
+    })
+</script>
+```
