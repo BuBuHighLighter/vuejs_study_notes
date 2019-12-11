@@ -7,3 +7,53 @@ computed是计算属性，所以在使用computed的时候，要使用给属性�
 **methods和computed看起来都差不多，为什么要用计算属性？**
 
 计算属性会进行缓存，如果多次使用，计算属性只会调用一次，而methods每次都会调用。
+
+
+## 计算属性的setter和getter
+
+每个计算属性都包含一个`getter`和一个`setter`。
+
+一个完整的计算属性:
+
+```html
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world'
+        },
+        computed: {
+            fullName: {
+                get: function() {
+
+                },
+                // 一般情况下不需要实现set方法。没有set方法就是一个只读属性。
+                // set方法是个有参数的方法
+                set: function(newValue) {
+
+                }
+            }
+        }
+    })
+</script>
+```
+
+简写的计算属性:
+
+```html
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world'
+        },
+        computed: {
+            fullName: function() {
+
+            }
+        }
+    })
+</script>
+```
+
+[一个完整的示例](../demos/demo1/index.html)
