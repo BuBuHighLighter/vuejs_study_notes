@@ -57,3 +57,45 @@ computed是计算属性，所以在使用computed的时候，要使用给属性�
 ```
 
 [一个完整的示例](../demos/demo1/index.html)
+
+## 计算属性和methods的对比
+
+```html
+<div id="app">
+    <!-- 调用4次getFullName() -->
+    <span>{{getFullName()}}</span>
+    <span>{{getFullName()}}</span>
+    <span>{{getFullName()}}</span>
+    <span>{{getFullName()}}</span>
+
+    <!-- 调用1次fullName -->
+    <span>{{fullName}}</span>
+    <span>{{fullName}}</span>
+    <span>{{fullName}}</span>
+    <span>{{fullName}}</span>
+</div>
+
+<script>
+    const app = new Vue({
+        el: 'app',
+        data: {
+            firstName: 'Kobe',
+            lastName: 'Bryant',
+        },
+        methods: {
+            getFullName() {
+                console.log('getFullName()');
+                return this.firstName + ' ' + this.lastName;
+            }
+        },
+        computed: {
+            fullName() {
+                console.log('fullName');
+                return this.firstName + ' ' + this.lastName;
+            }
+        }
+    })
+</script>
+```
+
+计算属性会做一层缓存，如果底层数据(firstName/lastName)没有改变，则不需要重新计算，直接从缓存中获取值。
